@@ -38,24 +38,28 @@ public class CalendarController {
   @GetMapping("/easter/{year}")
   public ModelAndView easter(@PathVariable int year) {
     return new ModelAndView("easter")
+            .addObject("year",year)
             .addObject("calendar", service.easter(year));
   }
 
   @GetMapping("/pentecost/{year}")
   public ModelAndView pentecost(@PathVariable int year) {
     return new ModelAndView("pentecost")
+            .addObject("year",year)
             .addObject("calendar", service.pentecost(year));
   }
 
   @GetMapping("/christmas/{year}")
   public ModelAndView christmas(@PathVariable int year) {
     return new ModelAndView("christmas")
+            .addObject("year",year)
             .addObject("calendar", service.christmas(year));
   }
 
   @GetMapping("/sylvester/{year}")
   public ModelAndView sylvester(@PathVariable int year) {
     return new ModelAndView("sylvester")
+            .addObject("year",year)
             .addObject("calendar", service.sylvester(year));
   }
 }
